@@ -4,11 +4,15 @@
   "description": "Shablon proecta",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "babel app/js -d dist/js --presets es2015 -w"
   },
   "author": "Boiko",
   "license": "ISC",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1",
     "bower-sync": "^0.1.1",
     "browser-sync": "^2.23.5",
     "concat": "^1.0.3",
