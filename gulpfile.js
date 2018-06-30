@@ -63,12 +63,17 @@ gulp.task('build', ['sass', 'scripts'], function() {
         'app/css/main.css',
         'app/css/libs.min.css'
         ])
+    .pipe(cssnano())
     .pipe(gulp.dest('dist/css'))
 
     var buildFonts = gulp.src('app/fonts/**/*') // Переносим шрифты в продакшен
     .pipe(gulp.dest('dist/fonts'))
 
+    var buildFonts = gulp.src('app/img/**/*') // Переносим картинки в продакшен
+    .pipe(gulp.dest('dist/img'))
+
     var buildJs = gulp.src('app/js/**/*') // Переносим скрипты в продакшен
+    .pipe(uglify())
     .pipe(gulp.dest('dist/js'))
 
     var buildHtml = gulp.src('app/*.html') // Переносим HTML в продакшен
